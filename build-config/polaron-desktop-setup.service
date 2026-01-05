@@ -1,0 +1,12 @@
+[Unit]
+Description=Polaron OS Desktop Setup
+After=graphical.target display-manager.service
+Wants=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/polaron-setup-desktop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target

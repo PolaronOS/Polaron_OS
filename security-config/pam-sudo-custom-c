@@ -1,0 +1,32 @@
+#%PAM-1.0
+# Polaron OS: Custom Sudo Stack with Duress Password Module (C Version)
+# Logic:
+# 1. pam_duress.so: Prompts for password (if not present), checks hash.
+#    - If proper duress hash -> Panic.
+#    - If not -> Returns PAM_IGNORE (passes execution down).
+# 2. pam_unix.so: 
+#    - try_first_pass: Uses the password captured by pam_duress.so.
+#    - Performs actual authentication.
+
+# Set up user limits
+session    required   pam_limits.so
+
+# Environment
+session    required   pam_env.so readenv=1 user_readenv=0
+session    required   pam_env.so readenv=1 envfile=/etc/default/locale user_readenv=0
+
+# AUTHENTICATION
+# ---------------------------------------------------------
+# 1. Duress Check (Prompts + Checks)
+auth    optional                        pam_duress.so
+
+# 2. Actual Auth (Consumes password from step 1)
+auth    [success=1 default=ignore]      pam_unix.so try_first_pass nullok
+
+# Fallback
+auth    requisite                       pam_deny.so
+auth    required                        pam_permit.so
+# ---------------------------------------------------------
+
+@include common-account
+@include common-session-noninteractive

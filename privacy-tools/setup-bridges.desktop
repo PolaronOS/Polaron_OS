@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Tor Bridges Setup
+Comment=Configure Tor Bridges (obfs4) to bypass censorship
+Exec=pkexec /usr/local/bin/setup-bridges.sh
+Icon=network-wireless-encrypted
+Terminal=false
+Categories=Network;Security;Settings;
+Keywords=tor;bridge;obfs4;censorship;

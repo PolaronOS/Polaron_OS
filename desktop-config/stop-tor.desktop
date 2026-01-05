@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Stop Tor Network
+Comment=Disable anonymous internet connection (no internet access)
+Exec=pkexec systemctl stop tor@default
+Icon=network-offline
+Terminal=false
+Categories=Network;Security;
+Keywords=tor;anonymity;privacy;network;stop;

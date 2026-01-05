@@ -1,0 +1,20 @@
+# Build artifacts (Large files)
+build/
+output/
+*.iso
+*.squashfs
+*.img
+
+# Temporary files
+*.tmp
+*.bak
+*~
+*.swp
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# User specific / AI artifacts
+.gemini/
+new_wallpaper.jpg

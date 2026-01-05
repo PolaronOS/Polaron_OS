@@ -1,0 +1,50 @@
+# Polaron OS - Tor Configuration
+# Clean configuration without duplicates
+
+## Basic Settings
+# User is handled by systemd, not torrc
+DataDirectory /var/lib/tor
+
+## Logging (using syslog to avoid /var/log/tor issues with tmpfs)
+Log notice syslog
+
+## Transparent Proxy Settings
+VirtualAddrNetworkIPv4 10.192.0.0/10
+AutomapHostsOnResolve 1
+AutomapHostsSuffixes .exit .onion
+TransPort 127.0.0.1:9040 IsolateClientAddr IsolateClientProtocol IsolateDestAddr IsolateDestPort
+DNSPort 127.0.0.1:5353
+
+## SOCKS Ports (Stream Isolation)
+# Default system port
+SocksPort 127.0.0.1:9050 IsolateDestAddr IsolateDestPort
+# Tor Browser compatibility
+SocksPort 127.0.0.1:9150 IsolateDestAddr IsolateDestPort
+# APT/Updates isolation
+SocksPort 127.0.0.1:9152 IsolateDestAddr IsolateDestPort
+# Messenger isolation
+SocksPort 127.0.0.1:9153 IsolateDestAddr IsolateDestPort
+
+## Control Port (for Nyx monitoring)
+ControlPort 9051
+CookieAuthentication 1
+
+## Circuit Building
+LearnCircuitBuildTimeout 1
+CircuitBuildTimeout 30
+
+## Entry Guards
+NumEntryGuards 8
+
+## Stream Isolation
+
+## Security Settings
+AllowSingleHopExits 0
+ClientOnly 1
+
+## Performance
+MaxCircuitDirtiness 600
+
+## Access Control (localhost only)
+SocksPolicy accept 127.0.0.1
+SocksPolicy reject *

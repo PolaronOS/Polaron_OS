@@ -1,0 +1,15 @@
+[Unit]
+Description=Secure Time Synchronization over Tor
+After=tor@default.service network.target
+Wants=tor@default.service
+ConditionPathExists=/usr/local/bin/secure-time-sync.sh
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/secure-time-sync.sh
+Restart=always
+RestartSec=30
+User=root
+
+[Install]
+WantedBy=multi-user.target

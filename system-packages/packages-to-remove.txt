@@ -1,0 +1,42 @@
+# Polaron OS - Packages to Remove
+# These packages are removed for privacy, security, or size optimization
+
+# ===== TELEMETRY & TRACKING =====
+ubuntu-report
+popularity-contest
+apport
+apport-symptoms
+whoopsie
+ubuntu-advantage-tools
+ubuntu-pro-client
+
+# ===== CLOUD INTEGRATION =====
+cloud-init
+landscape-client
+landscape-common
+
+# ===== UNNECESSARY GAMES =====
+gnome-mahjongg
+gnome-mines
+gnome-sudoku
+aisleriot
+
+# ===== BLOATWARE (if present) =====
+thunderbird
+libreoffice-*
+rhythmbox
+totem
+cheese
+shotwell
+
+# ===== SNAP (optional - for full control) =====
+snapd
+snap-store
+
+# ===== AMAZON & SHOPPING =====
+ubuntu-web-launchers
+
+# ===== UNNECESSARY DOCUMENTATION (size reduction) =====
+# Note: Keep if you want offline docs
+# doc-base
+# man-db

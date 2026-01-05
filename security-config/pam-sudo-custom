@@ -1,0 +1,34 @@
+#%PAM-1.0
+# Polaron OS: Custom Sudo Stack for Duress Password
+# Logic:
+# 1. Ask for password via pam_unix.
+# 2. If valid (success=2), skip Duress Check and Deny.
+# 3. If invalid (default=ignore), fall through to Duress Check.
+
+# Set up user limits
+session    required   pam_limits.so
+
+# Environment
+session    required   pam_env.so readenv=1 user_readenv=0
+session    required   pam_env.so readenv=1 envfile=/etc/default/locale user_readenv=0
+
+# AUTHENTICATION
+# ---------------------------------------------------------
+# pam_unix: Prompts for password. 
+# success=2 -> Jump over pam_exec and pam_deny (Auth OK)
+# default=ignore -> Fall through to next line (Auth Failed, check if Duress)
+auth    [success=2 default=ignore]      pam_unix.so nullok
+
+# Duress Check: Only reached if pam_unix failed (or ignored)
+# We use expose_authtok to read the password pam_unix just asked for.
+auth    optional                        pam_exec.so expose_authtok /usr/local/bin/check-duress.sh
+
+# Fallback: If we actually failed (and duress script didn't kill us), deny access.
+auth    requisite                       pam_deny.so
+
+# Safety net
+auth    required                        pam_permit.so
+# ---------------------------------------------------------
+
+@include common-account
+@include common-session-noninteractive

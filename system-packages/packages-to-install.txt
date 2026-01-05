@@ -1,0 +1,141 @@
+# Polaron OS - Essential Packages to Install
+# Security, Privacy, and Anonymity focused packages
+
+# ===== DESKTOP ENVIRONMENT =====
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+
+# ===== NETWORK MANAGER =====
+network-manager
+network-manager-gnome
+
+# ===== SECURITY TOOLS =====
+ufw
+fail2ban
+rkhunter
+lynis
+apparmor
+apparmor-utils
+apparmor-profiles
+apparmor-profiles-extra
+firejail
+
+# ===== TOR & ANONYMITY =====
+tor
+tor-geoipdb
+torbrowser-launcher
+obfs4proxy
+nyx
+
+# ===== PRIVACY TOOLS =====
+privoxy
+macchanger
+mat2
+metadata-cleaner
+
+# ===== DNS ENCRYPTION =====
+dnscrypt-proxy
+
+# ===== VPN SUPPORT =====
+openvpn
+wireguard
+network-manager-openvpn
+network-manager-vpnc
+
+# ===== ENCRYPTION =====
+cryptsetup
+cryptsetup-bin
+veracrypt
+gnupg
+gnupg2
+keepassxc
+paperkey
+
+# ===== SECURE COMMUNICATION =====
+signal-desktop
+element-desktop
+
+# ===== BROWSER & WEB =====
+firefox
+firefox-esr
+
+# ===== FILE MANAGEMENT =====
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+
+# ===== SECURE DELETION =====
+secure-delete
+bleachbit
+wipe
+
+# ===== ANTIVIRUS =====
+clamav
+clamav-daemon
+clamtk
+
+# ===== SYSTEM MONITORING =====
+htop
+nmon
+iotop
+nethogs
+
+# ===== NETWORK TOOLS =====
+nmap
+wireshark
+tcpdump
+netcat-openbsd
+dnsutils
+
+# ===== ARCHIVE SUPPORT =====
+p7zip-full
+p7zip-rar
+unrar
+zip
+unzip
+
+# ===== SYSTEM UTILITIES =====
+vim
+nano
+git
+wget
+curl
+rsync
+tmux
+screen
+
+# ===== FONTS =====
+fonts-liberation
+fonts-dejavu
+fonts-noto
+
+# ===== MULTIMEDIA (minimal) =====
+vlc
+mpv
+
+# ===== PDF VIEWER =====
+evince
+
+# ===== IMAGE VIEWER =====
+gpicview
+gimp
+
+# ===== TEXT EDITOR =====
+mousepad
+geany
+
+# ===== TERMINAL =====
+xfce4-terminal
+
+# ===== SYSTEM INFO =====
+neofetch
+inxi
+
+# ===== HARDENING =====
+libpam-pwquality
+libpam-tmpdir
+
+# ===== KERNEL HARDENING =====
+linux-hardened-generic

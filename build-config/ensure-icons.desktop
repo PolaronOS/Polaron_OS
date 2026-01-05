@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Ensure Desktop Icons
+Exec=/usr/local/bin/ensure-icons.sh
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

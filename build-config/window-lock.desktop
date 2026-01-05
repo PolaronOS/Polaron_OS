@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Lock Window Size
+Comment=Prevent Tor Browser from resizing (Anti-Fingerprinting)
+Exec=/usr/local/bin/enforce-geometry.sh
+Icon=system-lock-screen
+Terminal=true
+Categories=System;Security;
+StartupNotify=true

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Start Tor Network
+Comment=Enable anonymous internet connection through Tor
+Exec=pkexec systemctl start tor@default
+Icon=network-transmit-receive
+Terminal=false
+Categories=Network;Security;
+Keywords=tor;anonymity;privacy;network;
