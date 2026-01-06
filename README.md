@@ -6,6 +6,9 @@
 
 ---
 
+😠 AI participated in the creation, optimization, troubleshooting, and secure connection setup to the Tor network in Polaron 1.0
+🛑 THIS IS A JOKE PROJECT, DO NOT TAKE IT AS A USABLE SYSTEM, NOT ALL FUNCTIONS ARE 100% TESTED, THE OS IS CREATED ONLY TO SUPPORT INTERNET ANONYMITY, YOU ARE RESPONSIBLE FOR ALL CONSEQUENCES YOURSELF 🛑
+
 ## Prerequisites
 
 ### System Requirements
